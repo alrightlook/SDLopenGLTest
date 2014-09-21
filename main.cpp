@@ -14,7 +14,7 @@ void DrawSth()
 	glColor3f(0.0, 1.0,0.0);
 	glVertex3f(-1.0,-1.0, 0.0);
 	glColor3f(0.0, 0.0,1.0);
-	glVertex3f(1.0,1.0, 0.0);
+	glVertex3f(1.0,-1.0, 0.0);
 
 	glEnd();
 }
@@ -42,16 +42,16 @@ int main(int argc, char* argv[])
 
 	SDL_Window* window = SDL_CreateWindow("Hello Mac Book", 100, 100, 640, 480, SDL_WINDOW_OPENGL);
 	SDL_GLContext glContext = SDL_GL_CreateContext(window);
+
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 32);
 	SDL_GL_SetSwapInterval(1);
-	glewInit();
-	glColor3f(0.0, 0.0, 0.0);
 
+
+	glewInit();
 	LoadData();
 	bool quit = false;
 	SDL_Event e;
